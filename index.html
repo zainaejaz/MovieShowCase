@@ -15,9 +15,9 @@
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <!-- <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
       <div class="container-fluid">
-        <!-- Changed to container-fluid -->
+     
         <a class="navbar-brand firstLetter textFormat" href="#"
           >🎉Entertainment</a
         >
@@ -60,9 +60,44 @@
           </form>
         </div>
       </div>
+    </nav> -->
+
+    <nav class="p-3 w-100 bg-fixed navLayout">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+          <div class="col">
+            <ul class="list-unstyled d-flex">
+              <li>
+                <a href="#">🎉Entertainment</a>
+              </li>
+              <li>
+                <a href="#" class="">✨Series</a>
+              </li>
+              <li>
+                <a href="#" class="">🍿Movies</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-auto">
+            <form class="d-flex">
+              <input
+                id="searchMov"
+                class="form-control me-2"
+                type="search"
+                placeholder="Search movie or series"
+                aria-label="Search"
+              />
+              <button id="searcBtn" class="btn btn-warning" type="button">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </nav>
+
     <div class="container d-flex justify-content-center">
-      <div id="modal" class="m-3 pt-2 movBox"></div>
+      <div id="modal" class="m-3 pt-2"></div>
     </div>
 
     <script

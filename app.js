@@ -10,12 +10,12 @@ async function getMovie(movie) {
   const data = await res.json();
 
   if (data.Response === "True") {
-    movData.innerHTML = `<div class="m-3 pt-2 container movBox bg-color">
-        <div class="post-img">
+    movData.innerHTML = `
+        <div class="text-center">
           <img src=${data.Poster} class="rounded" alt="nothing">
         </div>
         <div>
-          <ul class="mt-5 mb-5 text" style="background-color: #700e0e">
+          <ul class="mt-5 mb-5 text p-5" style="background-color: #700e0e">
             <li>Title: ${data.Title}:</li>
             <li>Released: ${data.Released}</li>
             <li>Runtime: ${data.Runtime}</li>
@@ -25,7 +25,7 @@ async function getMovie(movie) {
             <li>Language: ${data.Language}</li>
           </ul>
         
-        </div>
+
         </div>`;
   } else {
     movData.innerHTML = `
