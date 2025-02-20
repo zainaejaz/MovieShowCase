@@ -98,6 +98,7 @@ window.addEventListener("popstate", (event) => {
   if (event.state?.random) {
     // Display random movies again
     displayRandomMovies();
+    input.value = "";
   } else if (event.state?.search) {
     // Display the previous search result
     const searchQuery = event.state.search;
