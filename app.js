@@ -69,6 +69,9 @@ async function displayRandomMovies() {
 
   // Wrap the movie cards in a Bootstrap row
   movData.innerHTML = `<div class="row justify-content-center">${movieCards}</div>`;
+
+  // Save the random movies in the browser history
+  history.pushState({ random: true }, null, window.location.href);
 }
 
 // Search for a specific movie
@@ -84,6 +87,27 @@ searcBtn.addEventListener("click", async function (e) {
         ${searchResult}
       </div>
     `;
+
+    // Save the search query in the browser history
+    history.pushState({ search: searchQuery }, null, window.location.href);
+  }
+});
+
+// Handle browser back/forward navigation
+window.addEventListener("popstate", (event) => {
+  if (event.state?.random) {
+    // Display random movies again
+    displayRandomMovies();
+  } else if (event.state?.search) {
+    // Display the previous search result
+    const searchQuery = event.state.search;
+    getMovie(searchQuery).then((searchResult) => {
+      movData.innerHTML = `
+        <div class="row justify-content-center">
+          ${searchResult}
+        </div>
+      `;
+    });
   }
 });
 
