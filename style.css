@@ -24,6 +24,21 @@ body {
   }
 }
 
+.nav-heading {
+  font-size: larger;
+  font-weight: 800;
+}
+
+@media (max-width: 500px) {
+  .nav-size {
+    width: 100%;
+  }
+  .nav-heading {
+    font-size: medium;
+    font-weight: 600;
+  }
+}
+
 li,
 a {
   list-style: none;
@@ -63,4 +78,25 @@ a:hover {
   font-weight: bolder;
   padding: 50px;
   color: #dfdf37;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.card-img-top {
+  height: 300px;
+  object-fit: cover;
+}
+
+.card-body {
+  text-align: center;
+}
+
+.bg-custom {
+  background-color: #700e0e !important;
+  color: white; /* Optional, to ensure text is readable */
 }
